@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/id_profileToolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/id_iv_profilepic"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_baseline_account_circle"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="1dp" />
+
+            <TextView
+                android:id="@+id/id_profileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/id_iv_profilepic"
+                android:text="tech.embark"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/id_ivpostmenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/ic_dotmenu" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ImageView
+        android:id="@+id/id_ivpostview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_profileToolbar"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_ivpostview">
+
+        <ImageView
+            android:id="@+id/id_ivlike"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:visibility="visible"
+            android:layout_margin="10dp"
+            android:onClick="Like"
+            app:srcCompat="@drawable/ic_likeborder"
+            tools:layout_editor_absoluteX="94dp"
+            tools:layout_editor_absoluteY="493dp" />
+
+        <ImageView
+            android:id="@+id/id_ivlikefill"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_margin="10dp"
+            android:onClick="Like"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_likefill"
+            tools:layout_editor_absoluteX="94dp"
+            tools:layout_editor_absoluteY="493dp" />
+
+        <ImageView
+            android:id="@+id/id_ivcomment"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/id_ivlike"
+            app:srcCompat="@drawable/ic_comment"
+            tools:layout_editor_absoluteX="94dp" />
+
+        <ImageView
+            android:id="@+id/id_ivsharepost"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/id_ivcomment"
+            app:srcCompat="@drawable/ic_share"
+            tools:layout_editor_absoluteX="94dp" />
+
+        <ImageView
+            android:id="@+id/id_ivsavepost"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            app:srcCompat="@drawable/ic_saveborder"
+            tools:layout_editor_absoluteX="94dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+        <TextView
+            android:id="@+id/id_tvlikecount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:text="310 likes"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/id_tvcaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:text="tech.emabark"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/id_tvcommentcount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:text="View all 40 comments"
+            android:textColor="#939292"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/id_tvmyracentcommment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:text="Grate post thanks..."
+            android:textColor="@color/black"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/id_tvuploadtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:text="24 April"
+            android:textColor="#939292"
+            android:textSize="10sp" />
+
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
